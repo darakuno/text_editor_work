@@ -7,10 +7,13 @@ public class InputHandler : MonoBehaviour
 {
     private TMP_InputField inputField;
     private EditorActions editorActions;
+    private UIController uiController;
 
     private int caretPosition;
     private bool isDebouncing = false;
     private const float DebounceDuration = 0.1f;
+    private int lastCaretPosition = -1;
+    private int lastTextLength = -1;
     private System.Action<InputAction.CallbackContext> formatBoldDelegate;
     private System.Action<InputAction.CallbackContext> formatItalicDelegate;
 
@@ -18,6 +21,7 @@ public class InputHandler : MonoBehaviour
     {
         this.inputField = editor.inputField;
         this.editorActions = editor.editorActions;
+        this.uiController = editor.UIController;
 
         formatBoldDelegate = ctx => OnFormatFormatAction(ctx, "<b>", "</b>");
         formatItalicDelegate = ctx => OnFormatFormatAction(ctx, "<i>", "</i>");
@@ -60,6 +64,14 @@ public class InputHandler : MonoBehaviour
         if (inputField != null && inputField.isFocused)
         {
             caretPosition = inputField.caretPosition;
+        }
+        bool hasChanged = (caretPosition != lastCaretPosition) || (inputField.text.Length != lastTextLength);
+
+        if (hasChanged && uiController != null)
+        {
+            uiController.UpdateStats(caretPosition);
+            lastCaretPosition = caretPosition;
+            lastTextLength = inputField.text.Length;
         }
     }
 
