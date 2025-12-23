@@ -11,7 +11,6 @@ public class InputHandler : MonoBehaviour
     private int caretPosition;
     private bool isDebouncing = false;
     private const float DebounceDuration = 0.1f;
-
     private System.Action<InputAction.CallbackContext> formatBoldDelegate;
     private System.Action<InputAction.CallbackContext> formatItalicDelegate;
 
@@ -71,7 +70,7 @@ public class InputHandler : MonoBehaviour
     {
         if (inputField != null && inputField.isFocused)
         {
-            context.ReadValueAsObject(); 
+            context.ReadValueAsObject();
             string tabSpace = "    ";
             inputField.text = inputField.text.Insert(caretPosition, tabSpace);
             inputField.caretPosition = caretPosition + tabSpace.Length;
@@ -102,7 +101,6 @@ public class InputHandler : MonoBehaviour
         int startIndex = Mathf.Min(anchor, focus);
         int endIndex = Mathf.Max(anchor, focus);
         int selectionLength = endIndex - startIndex;
-
         if (selectionLength > 0)
         {
             bool isEnclosingTags = startIndex > 0 &&
@@ -132,7 +130,7 @@ public class InputHandler : MonoBehaviour
                 inputField.selectionFocusPosition = startIndex + replacementText.Length;
             }
         }
-        else 
+        else
         {
             bool hasTagsAroundCaret = caretPosition >= startTag.Length &&
                                       (caretPosition + endTag.Length) <= inputField.text.Length &&
