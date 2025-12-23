@@ -1,62 +1,28 @@
-# =============== Unity игнорировать ВСЕГДА ===============
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-[Ll]ogs/
-[Uu]ser[Ss]ettings/
-[Uu]nity[Rr]eferenceAssemblies/
-[Uu]nityP]ackageManager/
-[Uu]nity[C]loud[B]uild/
+# =========================== #
+# Unity Generated (Required)  #
+# =========================== #
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
 
-# =============== Временные файлы ===============
-*.opendb
-*.VC.db
-.vs/
-*.userprefs
-*.pidb
-*.pdb
-
-# =============== OS файлы ===============
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-[Tt]humbs.db
-*.orig
-
-# =============== IDE файлы ===============
-.idea/
-.vscode/
-*.sln.ide/
-*.code-workspace
-
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-[Ll]ogs/
-[Uu]ser[Ss]ettings/
-
-# MemoryCaptures can get excessive in size.
-# They also could contain extremely sensitive data
-[Mm]emoryCaptures/
-
-# Recordings can get excessive in size
-[Rr]ecordings/
-
-# Uncomment if you have .gradle file in your project and experiencing performance issues
-# .gradle/
-
-# Never ignore Asset meta data
+# =========================== #
+#     Asset Store & Cache     #
+# =========================== #
+# Никогда не игнорируйте .meta файлы!
 # !/[Aa]ssets/**/*.meta
 
-# ===================================== #
-# Visual Studio / MonoDevelop generated #
-# ===================================== #
+# MemoryCaptures can get excessive in size.
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# =========================== #
+# IDE & OS Generated          #
+# =========================== #
+# Visual Studio / MonoDevelop
 [Ee]xported[Oo]bj/
 .vs/
 *.userprefs
@@ -66,7 +32,6 @@ ehthumbs.db
 *.suo
 *.tmp
 *.user
-*.userprefs
 *.pidb
 *.booproj
 *.svd
@@ -74,73 +39,22 @@ ehthumbs.db
 *.opendb
 *.VC.db
 
-# ============ #
-# OS generated #
-# ============ #
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-[Tt]humbs.db
-*.orig
-
-# ============= #
-# Unity Packages #
-# ============= #
-**/[Pp]ackages/
-
-# =========================== #
-# Asset Store / Unity Package Manager #
-# =========================== #
-[Uu]nity[Rr]eferenceAssemblies/
-[Uu]nityP]ackageManager/
-[Pp]ackages/
-
-# ======================== #
-# Third Party / Plugins #
-# ======================== #
-# Put third-party plugins that should be ignored here
-# Example:
-# SomeThirdPartyAsset/
-
-# ========================= #
-# Project Specific Patterns #
-# ========================= #
-# Put project specific patterns here
-# Example:
-# *.private
-# *.secret
-
-# ================ #
-# Unity Cloud Build #
-# ================ #
-[Uu]nity[C]loud[B]uild/
-
-# ================ #
-# Rider / IntelliJ #
-# ================ #
-.idea/
-
-# ================ #
-# Visual Studio Code #
-# ================ #
+# VS Code
 .vscode/
 *.code-workspace
 
-# ================ #
-# JetBrains Rider #
-# ================ #
+# Rider
+.idea/
 *.sln.ide/
 
-# ================ #
-# Unity Collab #
-# ================ #
-[Uu]nity[C]ollab/
+# OS
+.DS_Store*
+[Tt]humbs.db
+ehthumbs.db
+desktop.ini
 
-# ================ #
-# Git LFS Pointer Files #
-# ================ #
-# If you use Git LFS, you might want to ignore pointer files
-# *.bin
+# =========================== #
+# Plugins & Exceptions        #
+# =========================== #
+# Gradle (Android)
+.gradle/
