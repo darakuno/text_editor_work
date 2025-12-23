@@ -142,7 +142,7 @@ public class UIController : MonoBehaviour
             }
         }
 
-        statsLabel.text = $"Строка: {currentLine}";
+        statsLabel.text = $"Стр: {currentLine}";
     }
 
     private IEnumerator ApplyFontChangeDelayed(TMP_FontAsset newFont)
