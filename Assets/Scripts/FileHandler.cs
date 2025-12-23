@@ -41,7 +41,6 @@ public class FileHandler
             SaveFileAs();
             return;
         }
-
         try
         {
             File.WriteAllText(_saveFilePath, content);
@@ -70,7 +69,6 @@ public class FileHandler
         {
             _saveFilePath = newPath;
             string content = _editor.inputField.text;
-
             try
             {
                 File.WriteAllText(_saveFilePath, content);

@@ -8,10 +8,11 @@ public class Editor : MonoBehaviour
 {
     public TMP_InputField inputField;
     public TMP_FontAsset[] availableFonts;
+    public TMP_Dropdown fontDropdown;
     public TMP_Dropdown fileDropdown;
+    public TMP_Text fileTitleLabel;
 
     [HideInInspector] public EditorActions editorActions;
-
     private UIController uiController;
     private InputHandler inputHandler;
     private FileHandler fileHandler;
@@ -19,18 +20,15 @@ public class Editor : MonoBehaviour
     public FileHandler FileHandler => fileHandler;
 
     public static Editor Instance { get; private set; }
-
     void Awake()
     {
         if (Instance != null) Destroy(gameObject);
         Instance = this;
 
         editorActions = new EditorActions();
-        fileHandler = new FileHandler(this);
-
+        fileHandler = new FileHandler(this); 
         uiController = gameObject.AddComponent<UIController>();
         uiController.Initialize(this);
-
         inputHandler = gameObject.AddComponent<InputHandler>();
         inputHandler.Initialize(this);
     }
@@ -39,7 +37,6 @@ public class Editor : MonoBehaviour
     {
         if (Instance == this) Instance = null;
     }
-
     public void IncreaseTextSize() => uiController?.IncreaseTextSize();
     public void DecreaseTextSize() => uiController?.DecreaseTextSize();
     public void SaveText() => fileHandler?.SaveCurrentText(inputField.text);
