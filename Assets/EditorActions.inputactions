@@ -1,0 +1,119 @@
+{
+    "version": 1,
+    "name": "EditorActions",
+    "maps": [
+        {
+            "name": "UIEditor",
+            "id": "ac5b86b6-6c07-4a72-9e65-f9201567a86e",
+            "actions": [
+                {
+                    "name": "FormatBold",
+                    "type": "Button",
+                    "id": "f98c3122-66b5-49f8-9031-118cecd83f65",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FormatItalic",
+                    "type": "Button",
+                    "id": "dfad148d-5902-4001-93ef-9fa0bbc1dd95",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "InsertTab",
+                    "type": "Button",
+                    "id": "15e4309b-aa78-40b6-b0b6-5b42158dd2a5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "One Modifier",
+                    "id": "8cd32117-b310-4b48-a8cc-8b0a97c4239b",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FormatBold",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "1b18f3ac-5353-4465-a7c5-866610f9e67b",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FormatBold",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "1b872b06-7a1b-4c72-ab59-44fbd7df96d3",
+                    "path": "<Keyboard>/leftAlt",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FormatBold",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "One Modifier",
+                    "id": "46e81265-55be-45fd-a852-dcece0137c61",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FormatItalic",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "f39ddcc0-66e7-47cf-8548-b622cd703533",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FormatItalic",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "ea59918c-eeea-43cf-8041-18a0cc3e716d",
+                    "path": "<Keyboard>/leftAlt",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FormatItalic",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "400da4b2-4ea5-4bc6-afdf-bc8d74cac877",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "InsertTab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
