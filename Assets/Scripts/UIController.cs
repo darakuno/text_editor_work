@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using System.Collections;
+using System.Linq;
 
 public class UIController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class UIController : MonoBehaviour
     private TMP_FontAsset[] availableFonts;
     private TMP_Text fileTitleLabel;
     private FileHandler fileHandler;
+    private TMP_Text statsLabel;
 
     public void Initialize(Editor editor)
     {
@@ -21,6 +23,7 @@ public class UIController : MonoBehaviour
         this.availableFonts = editor.availableFonts;
         this.fileTitleLabel = editor.fileTitleLabel;
         this.fileHandler = editor.FileHandler;
+        this.statsLabel = editor.statsLabel;
         if (this.fileHandler != null)
         {
             this.fileHandler.OnFilePathChanged += UpdateFileTitle;
@@ -120,6 +123,26 @@ public class UIController : MonoBehaviour
                 fileHandler.SaveFileAs();
                 break;
         }
+    }
+
+    public void UpdateStats(int caretPos)
+    {
+        if (statsLabel == null || inputField == null) return;
+
+        string fullText = inputField.text;
+        int currentLine = 1;
+
+        int checkLimit = Mathf.Clamp(caretPos, 0, fullText.Length);
+
+        for (int i = 0; i < checkLimit; i++)
+        {
+            if (fullText[i] == '\n')
+            {
+                currentLine++;
+            }
+        }
+
+        statsLabel.text = $"Строка: {currentLine}";
     }
 
     private IEnumerator ApplyFontChangeDelayed(TMP_FontAsset newFont)
